@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  
+
+}
+body {
+  background-color: rgba(0, 0, 0, 0.83);
+opacity: 1;
+background-image:  radial-gradient(rgba(101, 163, 13, 0.15) 1.25px, transparent 1.25px), radial-gradient(rgba(101, 163, 13, 0.15) 1.25px, rgba(0, 0, 0, 0.83) 1.25px);
+background-size: 50px 50px;
+background-position: 0 0,25px 25px;
+margin:0;
+}
+/* Add a new utility class under the layer */
+@layer utilities {
+  .glass {
+    @apply bg-gray-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-800
+  }
+
+  .borderless-glass {
+    @apply bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10
+  }
+
+  .glass-glow {
+    @apply absolute -inset-1 rounded-md blur-lg bg-gradient-to-br from-yellow-500 via-lime-800 to-green-500 z-10 opacity-80
+  }
+
+  .css-blurry-gradient {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    filter: blur(100px);
+    background: radial-gradient(circle at 50% 50%, theme(colors.lime.600), theme(colors.gray.900));
+    opacity: 0.3;
+  }
+  
+  .gradient-hero-text{
+    background: -webkit-linear-gradient(theme(colors.green.600), theme(colors.lime.300));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
